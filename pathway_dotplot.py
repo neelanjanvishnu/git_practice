@@ -87,6 +87,8 @@ def plot_enriched_categories(df: pd.DataFrame, title: str, filename: str) -> Non
     plt.title(title, fontsize=14)
     plt.xticks(fontsize=10)
     plt.yticks(fontsize=9)
+    plt.tick_params(axis="y", which="both", length=4, width=0.8)
+    plt.tick_params(axis="x", which="both", length=4, width=0.8)
     max_xlim = -np.log10(df_sorted["p-value"].min()) + 1
     plt.xlim(0, max_xlim)
     plt.grid(axis="x", linestyle="--", linewidth=0.5)

@@ -100,7 +100,12 @@ plot <- ggplot(pathway_df, aes(x = -log10(p_value), y = reorder(Pathway, p_value
   theme_minimal(base_size = 12) +
   theme(
     panel.grid.major.y = element_blank(),
-    panel.grid.minor = element_blank()
+    panel.grid.minor = element_blank(),
+    axis.ticks.y = element_line(color = "black"),
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.length = grid::unit(3, "pt"),
+    axis.line.y = element_line(color = "black"),
+    axis.line.x = element_line(color = "black")
   )
 
 print(plot)
