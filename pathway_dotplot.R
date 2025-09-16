@@ -1,5 +1,19 @@
 #!/usr/bin/env Rscript
 
+required_packages <- c("ggplot2", "dplyr", "svglite")
+missing_packages <- required_packages[!
+  vapply(
+    required_packages,
+    requireNamespace,
+    FUN.VALUE = logical(1),
+    quietly = TRUE
+  )
+]
+
+if (length(missing_packages) > 0) {
+  install.packages(missing_packages, repos = "https://cloud.r-project.org")
+}
+
 suppressPackageStartupMessages({
   library(ggplot2)
   library(dplyr)
